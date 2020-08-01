@@ -3,11 +3,11 @@ from discord.ext import commands
 import json
 import os
 
-with open ('configs/aliases.json', 'r',encoding='utf8')as aliases:
+with open ('aliases.json', 'r',encoding='utf8')as aliases:
 	aliases = json.load(aliases)
-with open ('configs/config.json', 'r',encoding='utf8')as config:
+with open ('config.json', 'r',encoding='utf8')as config:
 	config = json.load(config)
-with open ('configs/key.json', 'r',encoding='utf8')as key:
+with open ('key.json', 'r',encoding='utf8')as key:
 	key = json.load(key)
 
 TOKEN = key['TOKEN']
