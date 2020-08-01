@@ -1,14 +1,15 @@
 import discord
 from discord.ext import commands
+import json
 
-with open ('configs/aliases.json', 'r',encoding='utf8')as aliases:
+with open ('aliases.json', 'r',encoding='utf8')as aliases:
 	aliases = json.load(aliases)
-with open ('configs/config.json', 'r',encoding='utf8')as config:
+with open ('config.json', 'r',encoding='utf8')as config:
 	config = json.load(config)
-with open ('configs/key.json', 'r',encoding='utf8')as key:
+with open ('key.json', 'r',encoding='utf8')as key:
 	key = json.load(key)
 
-class Cog(commands.Cog):
+class events(commands.Cog):
 	def __init__(self, bot):
 		self.bot=bot
 
@@ -28,4 +29,4 @@ class Cog(commands.Cog):
 		await channel.send(f'**{member.name}#{member.discriminator}** left {member.guild.name}!')
 
 def setup(bot):
-	bot.add_cog(Cog(bot))
+	bot.add_cog(events(bot))
