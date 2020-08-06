@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import json
 import os
+import keep_alive
 
 with open ('config/aliases.json', 'r',encoding='utf8')as aliases:
 	aliases = json.load(aliases)
@@ -27,4 +28,5 @@ for filename in os.listdir('./cmds'):
 	if filename.endswith('.py'):
 		bot.load_extension(f'cmds.{filename[:-3]}')
 
+keep_alive.keep_alive()
 bot.run(TOKEN)
