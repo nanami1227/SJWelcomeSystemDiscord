@@ -23,7 +23,7 @@ class events(commands.Cog):
 	async def on_member_join(self, member):
 		channel = self.bot.get_channel(int(config['welcome_channel']))
 		await channel.send(f'{member.mention} joined {member.guild.name}!')
-		role = get(member.guild.role, id=738610073118572624)
+		role = get(member.guild.roles, id=738610073118572624)
 		await member.add_roles(role)
 
 	@commands.Cog.listener()
